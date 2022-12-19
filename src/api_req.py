@@ -5,7 +5,6 @@ load_dotenv(find_dotenv())
 
 API_URL="http://api.timezonedb.com/v2.1/convert-time-zone"
 
-
 def res(time,prevTZ,curTZ):
     payload={
         'key': os.getenv('API_KEY'),
