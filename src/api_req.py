@@ -5,14 +5,13 @@ load_dotenv(find_dotenv())
 
 API_URL="http://api.timezonedb.com/v2.1/convert-time-zone"
 
-def res(time,prevTZ,curTZ):
+def res(curTime,prevTZ,curTZ):
     payload={
         'key': os.getenv('API_KEY'),
         'format':'json',
-        'from':'EST',
-        'to':'UST',
-        'time':time
+        'from':prevTZ.upper(),
+        'to':curTZ.upper(),
     }
     res=requests.get(API_URL,params=payload)
     data=res.json()
-    print(data['toTimestamp'])
+    return ((curTime+data['offset']))
