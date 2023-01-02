@@ -1,10 +1,12 @@
 import discord
 from discord.ext import commands
 import os
+import asyncio
 from datetime import datetime
 from api_req import res
 from unixtime import conToUnixTime
 from unixtime import con12TimeToUnix
+from dynamobd_user_store import addUser
 
 bot = commands.Bot(command_prefix='>', intents=discord.Intents().all())
 
@@ -30,6 +32,7 @@ async def conver12Time(ctx,prevTime: str = commands.parameter(description="[12 H
 ##Todo: Implement database to write author name and time zone 
 @bot.command(name="MyLocation",help="Set your default timezone")
 async def setTz(ctx,timezone):
-    await ctx.send(f'{ctx.message.author}{timezone}')
-
+    if ctx.message.author==bot.user:
+        return
+    await ctx.send(addUser(ctx.message.author,timezone))
 bot.run(os.getenv('DISCORD_TOKEN'))
