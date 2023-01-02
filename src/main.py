@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 import os
-import asyncio
 from datetime import datetime
 from api_req import res
 from unixtime import conToUnixTime
@@ -22,17 +21,22 @@ async def sendHelp(ctx):
 @bot.command(name='TimeTo',help="Convert Exact Time\nInput [time in 12hr]/[Year]/[Month]/[Day] [Previous Timezone] [Requested Timezone]\nEX->12:30pm/2023/02/03 EST PST")
 async def converTime(ctx,prevTime: str = commands.parameter(description="[time in 12hr]/[Year]/[Month]/[Day]"),prevTZ: str=commands.parameter(description="Previous time zone"),TZ: str =commands.parameter(description="to time zone")):
     unixTime=(conToUnixTime(prevTime))
+    prevTZ=prevTZ.upper()
+    TZ=TZ.upper()    
     await ctx.send(datetime.fromtimestamp(res(unixTime,prevTZ,TZ)).strftime('%Y-%m-%d %I:%M %p'))
 
 @bot.command(name="TzToTz",help="Convert 12 Hour time to different time zones\n[12 Hour Time] [Previous Time Zone] [New Time Zone]\nEX-> 12:00PM EST PST")
 async def conver12Time(ctx,prevTime: str = commands.parameter(description="[12 Hour Time] -> EX.12:30PM"),prevTZ: str=commands.parameter(description="Previous time zone"),TZ: str =commands.parameter(description="to time zone")):
     unixTime=(con12TimeToUnix(prevTime))
+    prevTZ=prevTZ.upper()
+    TZ=TZ.upper()    
     await ctx.send(datetime.fromtimestamp(res(unixTime,prevTZ,TZ)).strftime('%I:%M %p'))
 
-##Todo: Implement database to write author name and time zone 
+#Todo: add checks to see if the time zone provided is valid
 @bot.command(name="MyLocation",help="Set your default timezone")
-async def setTz(ctx,timezone):
+async def setTz(ctx,time_zone):
+    time_zone=time_zone.upper()
     if ctx.message.author==bot.user:
         return
-    await addUser(ctx.message.author,timezone)
+    await addUser(ctx,ctx.message.author,time_zone)
 bot.run(os.getenv('DISCORD_TOKEN'))
