@@ -34,5 +34,5 @@ async def conver12Time(ctx,prevTime: str = commands.parameter(description="[12 H
 async def setTz(ctx,timezone):
     if ctx.message.author==bot.user:
         return
-    await ctx.send(addUser(ctx.message.author,timezone))
+    await addUser(ctx.message.author,timezone)
 bot.run(os.getenv('DISCORD_TOKEN'))
