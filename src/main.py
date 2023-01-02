@@ -27,4 +27,9 @@ async def conver12Time(ctx,prevTime: str = commands.parameter(description="[12 H
     unixTime=(con12TimeToUnix(prevTime))
     await ctx.send(datetime.fromtimestamp(res(unixTime,prevTZ,TZ)).strftime('%I:%M %p'))
 
+##Todo: Implement database to write author name and time zone 
+@bot.command(name="MyLocation",help="Set your default timezone")
+async def setTz(ctx,timezone):
+    await ctx.send(f'{ctx.message.author}{timezone}')
+
 bot.run(os.getenv('DISCORD_TOKEN'))
