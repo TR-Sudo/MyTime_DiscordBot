@@ -8,7 +8,7 @@ dynamo_client  =  boto3.resource(service_name = 'dynamodb',region_name = os.gete
               aws_access_key_id = os.getenv("AWS_ACCESS_KEYID"),
               aws_secret_access_key = os.getenv("SECRET_ACCESS_KEY"))
 
-async def addUser(ctx,user_id,time_zone):
+async def add_user(ctx,user_id,time_zone):
 
     #add to user table
     user_table=dynamo_client.Table("MyTime_Discord_Bot")
@@ -22,3 +22,12 @@ async def addUser(ctx,user_id,time_zone):
         await ctx.send(f'{user_id} added with time zone {time_zone}')
     else:
         await ctx.send("failed to add user please enter [>help Mylocation]")
+
+#returns users time zone from database
+async def get_user(ctx,user_id):
+    user_table=dynamo_client.Table("MyTime_Discord_Bot")
+    res=user_table.get_item(Key={'userid':str(user_id)})
+    if('Item' not in res):
+        return "User needs to be added, Enter [>help MyLocation] for assistance"
+    else:
+        return (res['Item']['time_zone'])
