@@ -4,7 +4,7 @@ Mytime conversion bot is the perfect tool for anyone on Discord who needs to qui
 
 # MyTime is always alive invite and prompt away!
 https://discord.com/oauth2/authorize?client_id=1053567782425464863&permissions=75776&scope=bot
-- AWS EC2 Instance
+- Deployed on a AWS EC2 Instance
 
 # Support
 ```
