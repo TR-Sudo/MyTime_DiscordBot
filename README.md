@@ -59,6 +59,7 @@ You can also type >help category for more info on a category.
 
 # API
 https://timezonedb.com/
+<br></br>
 https://discord.com/developers/docs/intro
 
 # Database
