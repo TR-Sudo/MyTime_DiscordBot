@@ -50,12 +50,15 @@ Type >help command for more info on a command.
 You can also type >help category for more info on a category.
 ```
 ## Examples
-![image](https://user-images.githubusercontent.com/78048789/210300457-4179de63-6acb-4602-8f99-a84bf5fb1d78.png)
-![image](https://user-images.githubusercontent.com/78048789/210300591-827f83dd-b3dd-4a52-a67c-b0363308bbfa.png)
+![Screenshot 2023-02-13 203549](https://user-images.githubusercontent.com/78048789/218615669-6fbce45e-53a0-414d-9ab0-b972b47c7414.png)
+![Screenshot 2023-02-13 203726](https://user-images.githubusercontent.com/78048789/218615798-16d09fa4-62eb-4af0-8cb0-7207fcab293c.png)
+
+
 
 # With Setup
-![image](https://user-images.githubusercontent.com/78048789/210300649-e3241033-6bfc-4352-8b03-c8d376491f20.png)
-![image](https://user-images.githubusercontent.com/78048789/210300673-178017bf-f9d1-4e87-8331-c142b5840685.png)
+![Screenshot 2023-02-13 203830](https://user-images.githubusercontent.com/78048789/218615942-fcf464b6-e5cf-48a4-86b6-8cf24ab3843a.png)
+![Screenshot 2023-02-13 203957](https://user-images.githubusercontent.com/78048789/218616138-de31575c-7be4-4b6f-826a-f041bba489fa.png)
+
 
 # API
 https://timezonedb.com/
