@@ -66,6 +66,4 @@ https://timezonedb.com/
 https://discord.com/developers/docs/intro
 
 # Database
-<p align="left">
-  <img src="https://miro.medium.com/max/700/1*vlaWAXinx8flFp5ZsytpGg.png"/>
-</p>
+<img src="https://miro.medium.com/max/700/1*vlaWAXinx8flFp5ZsytpGg.png"/>
